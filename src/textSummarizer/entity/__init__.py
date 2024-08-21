@@ -1,9 +1,17 @@
 from dataclasses import dataclass
 from pathlib import Path
 
-@dataclass
+@dataclass(frozen=True)
 class DataIngestionConfig:
     root_dir : Path
     source_URL : str
     local_data_file : str
     unzip_dir : Path
+
+
+@dataclass(frozen=True)
+class DataValidationConfig:
+    root_dir: Path
+    STATUS_FILE: Path
+    ALL_REQUIRED_FILES : list
+    
