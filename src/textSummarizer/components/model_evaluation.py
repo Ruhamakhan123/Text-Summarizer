@@ -53,7 +53,7 @@ class ModelEvaluation:
                 
             # Finally compute and return the ROUGE scores.
             score = metric.compute()
-    return score
+            return score
 
     def evaluate(self):
         device = "cuda" if torch.cuda.is_available() else "cpu"
